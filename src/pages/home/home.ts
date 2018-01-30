@@ -26,7 +26,7 @@ export class HomePage {
         this.mostrarMensaje("Result: " + barcodeData.text + "\n" +
                             "Format: " + barcodeData.format + "\n" +
                             "Cancelled: " + barcodeData.cancelled);
-        if(barcodeData.cancelled == 0 && barcodeData.text != null) {
+        if(barcodeData.cancelled && barcodeData.text != null) {
           this.historialService.agregarHistorial(barcodeData.text);
         }
     }, (err) => {
