@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { HistorialService } from '../../providers/historial/historial';
-import { ScanData } from '../,./models/scan-data.model';
+import { ScanData } from '../../models/scan-data.model';
 
 @IonicPage()
 @Component({
