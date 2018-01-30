@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 //pluggins
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 //servicios
 import { HistorialService } from '../providers/historial/historial';
 //componentes
@@ -36,6 +37,7 @@ import { HomePage, TabsPage, MapaPage, HistorialPage } from '../pages/index.pagi
     StatusBar,
     SplashScreen,
     BarcodeScanner,
+    InAppBrowser,
     HistorialService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

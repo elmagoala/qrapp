@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the HistorialPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage } from 'ionic-angular';
+import { HistorialService } from '../../providers/historial/historial';
+import { ScanData } from '../,./models/scan-data.model';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HistorialPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  historial: ScanData[] = [];
+  constructor(private historialService:HistorialService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HistorialPage');
+    this.historial = this.historialService.cargarHistorial();
+  }
+
+  abrirScan( index:number ) {
+    this.historialService.abrirScan(index);
   }
 
 }

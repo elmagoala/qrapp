@@ -23,9 +23,6 @@ export class HomePage {
     }
 
     this.barcodeScanner.scan().then((barcodeData) => {
-        this.mostrarMensaje("Result: " + barcodeData.text + "\n" +
-                            "Format: " + barcodeData.format + "\n" +
-                            "Cancelled: " + barcodeData.cancelled);
         if(barcodeData.cancelled && barcodeData.text != null) {
           this.historialService.agregarHistorial(barcodeData.text);
         }
