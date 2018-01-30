@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 //pluggins
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+//mapas
+import { AgmCoreModule } from '@agm/core';
 //servicios
 import { HistorialService } from '../providers/historial/historial';
 //componentes
@@ -23,7 +25,10 @@ import { HomePage, TabsPage, MapaPage, HistorialPage } from '../pages/index.pagi
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyALDhd_cTQFwrErXkqojMcNiBdqRkoMQSo'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

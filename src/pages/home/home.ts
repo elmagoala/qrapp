@@ -23,7 +23,8 @@ export class HomePage {
     }
 
     this.barcodeScanner.scan().then((barcodeData) => {
-        if(barcodeData.cancelled && barcodeData.text != null) {
+        //this.mostrarMensaje(barcodeData.text);
+        if(!barcodeData.cancelled && barcodeData.text != null) {
           this.historialService.agregarHistorial(barcodeData.text);
         }
     }, (err) => {
